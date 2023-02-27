@@ -5,6 +5,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    flash[:notice] = "投稿が成功しました"
     if @list.save
       redirect_to list_path(@list.id)
     else
